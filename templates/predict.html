@@ -1,0 +1,389 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Prediction</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../static/favicon/site.webmanifest">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/animate.min.css">
+    <link rel="stylesheet" href="../static/css/magnific-popup.css">
+    <link rel="stylesheet" href="../static/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/dripicons.css">
+    <link rel="stylesheet" href="../static/css/slick.css">
+    <link rel="stylesheet" href="../static/css/meanmenu.css">
+    <link rel="stylesheet" href="../static/css/swiper.min.css">
+    <link rel="stylesheet" href="../static/css/default.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header-area header-two">
+        <div id="header-sticky" class="menu-area">
+            <div class="container">
+                <div class="second-menu">
+                    <div class="row align-items-center">
+                        <div class="col-lg-2 col-md-12">
+                            <div class="logo">
+                                <a href="/"><img src="../static/img/logo/logo2.png" alt="logo"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 text-center">
+
+                            <div class="main-menu">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                        <li class="has-sub">
+                                            <a href="/">Dashboard</a>
+                                        </li>
+                                        <li><a href="predict">Prediction</a></li>
+                                        <li><a href="trainmodel">Model Training</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 text-right d-none d-lg-block">
+                            <a href="/signout" class="top-btn mt-15 mb-15">Sign Out <i
+                                    class="fa-light fa-sign-out"></i></a>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile-menu"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- breadcrumb-area -->
+    <section class="breadcrumb-area d-flex align-items-center"
+        style="background-image:url(../static/img/bg/bdrc-bg.jpg)">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="breadcrumb-wrap text-center">
+                        <div class="breadcrumb-title">
+                            <h2>Prediction</h2>
+                            <div class="breadcrumb-wrap">
+
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Prediction</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb-area-end -->
+
+    <!-- predict-area -->
+    <section class="contact-area pt-120 pb-120 p-relative fix">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="contact-bg02 contact-bg-gry2">
+                        <div class="section-title mb-20 wow fadeInDown animated" data-animation="fadeInDown"
+                            data-delay=".4s" style="visibility: visible; animation-name: fadeInDown;">
+                            <h5><img src="../static/img/bg/sub-icon.png" alt="icon01"> UPLOAD VOICE AND SELECT MODEL
+                            </h5>
+                            <h2>
+                                Depression Prediction
+                            </h2>
+                        </div>
+
+                        <form action="/predict" method="post" enctype="multipart/form-data"
+                            class="contact-form mt-30 wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s"
+                            style="visibility: visible; animation-name: fadeInUp;">
+                            <div class="row">
+                                <!-- Radio button group for toggling between recording voice and uploading voice -->
+                                <div class="col-lg-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="voiceOption"
+                                            id="uploadVoiceOption" value="upload" checked>
+                                        <label class="form-check-label" for="uploadVoiceOption">
+                                            Upload Voice
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="voiceOption"
+                                            id="recordVoiceOption" value="record">
+                                        <label class="form-check-label" for="recordVoiceOption">
+                                            Record Voice
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Section for uploading voice -->
+                                <div id="uploadVoiceSection" class="col-lg-6">
+                                    <div class="contact-field p-relative c-name mb-20">
+                                        <input type="file" id="voiceFile" name="voiceFile" accept=".wav" required>
+                                    </div>
+                                </div>
+
+                                <!-- Section for recording voice -->
+                                <div id="recordVoiceSection" class="col-lg-6" style="display: none;">
+                                    <div class="contact-field p-relative c-name mb-20">
+                                        <input type="text" id="voiceName" name="voiceName" placeholder="Voice Name">
+                                    </div>
+                                    <div class="slider-btn">
+                                        <button type="button" id="recordButton" class="btn ss-btn"
+                                            data-animation="fadeInRight" data-delay=".8s">
+                                            <span>Record<i class="fa-light fa-microphone"></i></span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Select model and action buttons -->
+                                <div class="col-lg-12">
+                                    <div class="contact-field p-relative c-name mb-20">
+                                        <br>
+                                        <select name="model" id="model" required>
+                                            <option value="">Select Model</option>
+                                            <optgroup label="Default Models">
+                                                <option value="logistic_regression lr_model.joblib">Logistic Regression</option>
+                                                <option value="random_forest rf_model.joblib">Random Forest</option>
+                                                <option value="svm_gaussian_kernel svmgk_model.joblib">SVM Gaussian Kernel</option>
+                                                <option value="svm_linear_kernel svmlk_model.joblib">SVM Linear Kernel</option>
+                                            </optgroup>
+                                            <optgroup label="Your Trained Models">
+                                                {% for model in model_names %}
+                                                <option value="{{ model[1] }} {{ model[2] }}">{{ model[0] }} {{ model[1] }}</option>
+                                                {% endfor %}
+                                            </optgroup>
+                                        </select>                                        
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="slider-btn">
+                                        <button type="reset" class="btn ss-btn" data-animation="fadeInRight"
+                                            data-delay=".8s">
+                                            <span>Reset<i class="fa-light fa-refresh"></i></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="slider-btn">
+                                        <button type="submit" class="btn ss-btn" data-animation="fadeInRight"
+                                            data-delay=".8s">
+                                            <span>Predict<i class="fa-light fa-plus"></i></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="contact-bg02 contact-bg-gry2">
+                        <div class="section-title mb-20 wow fadeInDown animated" data-animation="fadeInDown"
+                            data-delay=".4s" style="visibility: visible; animation-name: fadeInDown;">
+                            <h5><img src="../static/img/bg/sub-icon.png" alt="icon01"> DOWNLOAD RESULTS</h5>
+                            <h2>
+                                Prediction Details
+                            </h2>
+                        </div>
+
+                        <div class="prediction-results mt-30">
+                            <div class="d-flex flex-row justify-content-between prediction-item">
+                                <label for="voiceText">File Name:</label>
+                                <span id="voiceText">{{ file_name }}</span>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between prediction-item">
+                                <label for="predictionText">Prediction:</label>
+                                <span id="predictionText">{{ prediction_class }}</span>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between prediction-item">
+                                <label for="predictionPercentage">Prediction Percentage:</label>
+                                <span id="predictionPercentage">{{ prediction_percentage }}</span>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between prediction-item">
+                                <label for="modelUsed">Model Used:</label>
+                                <span id="modelUsed">{{ selected_model }}</span>
+                            </div>
+                            <div class="col-lg-8 mt-15">
+                                <div class="slider-btn">
+                                    <a href="/download_prediction_report?file_name={{ file_name }}&prediction_class={{ prediction_class }}&prediction_percentage={{ prediction_percentage }}&selected_model={{ selected_model }}"
+                                        class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s"><span>Download
+                                            Report<i class="fa-light fa-download"></i></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- predict-area-end -->
+
+    <!-- footer -->
+    <footer class="footer-bg footer-two footer-p" style="background-image: url(../static/img/bg/footer-bg.png);">
+        <div class="footer-top  pt-90 pb-30">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-xl-4 col-lg-4 col-sm-6">
+                        <div class="footer-widget mb-30" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="f-widget-title">
+                                <h2> <img src="../static/img/logo/f_logo.png" alt="img"></h2>
+                            </div>
+                            <div class="f-contact pr-10">
+                                <p>Empowering mental health through innovative technology, we strive to create
+                                    accessible solutions for early detection and intervention in children's mental
+                                    well-being, ensuring a brighter and healthier future for all.</p>
+                            </div>
+                            <div class="footer-social mt-10">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-sm-6">
+                        <div class="footer-widget mb-30" data-aos="fade-up" data-aos-duration="1400">
+                            <div class="f-widget-title">
+                                <h2>Important Links</h2>
+                            </div>
+                            <div class="footer-link">
+                                <ul>
+                                    <li><a href="/">Dashboard</a></li>
+                                    <li><a href="predict">Prediction</a></li>
+                                    <li><a href="train-model">Model Training</a></li>
+                                    <li><a href="/signout">Sign Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-sm-6">
+                        <div class="footer-widget mb-30" data-aos="fade-up" data-aos-duration="1800">
+                            <div class="f-widget-title">
+                                <h2>Contact Us </h2>
+                            </div>
+                            <div class="f-contact pr-10">
+                                <ul>
+                                    <li>
+                                        <div class="icon"><i class="icon fal fa-envelope"></i><span><a
+                                                    href="mailto:info@kfueit.edu.pk">info@kfueit.edu.pk</a></span></div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"> <i class="icon fal fa-location-dot"></i> <span>Kfueit, Abu
+                                                Dhabi Rd, Rahim Yar Khan, Punjab</span> </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"> <i class="icon fal fa-phone"></i> <span><a
+                                                    href="tel:+921234567890">+92 123 4567890</a></span> </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-wrap">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        Copyright © DDCV2024 . All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-end -->
+
+    <script>
+        $(document).ready(function () {
+            // Show/hide sections based on user's choice
+            $('input[name="voiceOption"]').change(function () {
+                if ($(this).val() === "upload") {
+                    $('#recordVoiceSection').hide();
+                    $('#uploadVoiceSection').show();
+                    $('#voiceFile').prop('required', true);
+                    $('#voiceName').prop('required', false);
+                } else {
+                    $('#recordVoiceSection').show();
+                    $('#uploadVoiceSection').hide();
+                    $('#voiceFile').prop('required', false);
+                    $('#voiceName').prop('required', true);
+                }
+            });
+        });
+    </script>
+
+    <script>
+    $(document).ready(function () {
+        $('#recordButton').click(function () {
+            // Show alert to inform the user that recording will start
+            alert("Your recording will start now.");
+            // Start recording after user clicks OK
+            if (confirm("Click OK to start recording for 5 seconds.")) {
+                // Get the value of the voice name input field
+                var voiceName = $('#voiceName').val();
+                // Send an AJAX POST request to the Flask /recording route
+                $.ajax({
+                    type: 'POST',
+                    url: '/recording',
+                    data: { voiceName: voiceName },
+                    success: function (response) {
+                        // Handle success response, if needed
+                        alert("Your recording is completed.");
+                        console.log('Recording request sent successfully');
+                        // Redirect to predict.html or do something else
+                        // window.location.href = '/predict'; // Redirect to the prediction page
+                    },
+                    error: function (xhr, status, error) {
+                        // Handle error, if needed
+                        console.error('Error sending recording request:', error);
+                    }
+                });
+            } else {
+                // Alert the user that recording has been cancelled
+                alert("Recording cancelled.");
+            }
+        });
+    });
+    </script>
+
+    <!-- JS here -->
+    <script src="../static/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="../static/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/slick.min.js"></script>
+    <script src="../static/js/ajax-form.js"></script>
+    <script src="../static/js/paroller.js"></script>
+    <script src="../static/js/wow.min.js"></script>
+    <script src="../static/js/js_isotope.pkgd.min.js"></script>
+    <script src="../static/js/imagesloaded.min.js"></script>
+    <script src="../static/js/parallax.min.js"></script>
+    <script src="../static/js/jquery.waypoints.min.js"></script>
+    <script src="../static/js/jquery.counterup.min.js"></script>
+    <script src="../static/js/jquery.scrollUp.min.js"></script>
+    <script src="../static/js/jquery.meanmenu.min.js"></script>
+    <script src="../static/js/parallax-scroll.js"></script>
+    <script src="../static/js/swiper.min.js"></script>
+    <script src="../static/js/jquery.magnific-popup.min.js"></script>
+    <script src="../static/js/element-in-view.js"></script>
+    <script src="../static/js/main.js"></script>
+</body>
+
+</html>

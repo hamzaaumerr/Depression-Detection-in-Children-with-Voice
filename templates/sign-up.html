@@ -1,0 +1,263 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../static/favicon/site.webmanifest">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/animate.min.css">
+    <link rel="stylesheet" href="../static/css/magnific-popup.css">
+    <link rel="stylesheet" href="../static/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/dripicons.css">
+    <link rel="stylesheet" href="../static/css/slick.css">
+    <link rel="stylesheet" href="../static/css/meanmenu.css">
+    <link rel="stylesheet" href="../static/css/swiper.min.css">
+    <link rel="stylesheet" href="../static/css/default.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header-area header-two">
+        <div id="header-sticky" class="menu-area">
+            <div class="container">
+                <div class="second-menu">
+                    <div class="row align-items-center">
+                        <div class="col-lg-2 col-md-12">
+                            <div class="logo">
+                                <a href="/"><img src="../static/img/logo/logo2.png" alt="logo"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 text-center">
+
+                            <div class="main-menu">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="contact">Contact Us</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 text-right d-none d-lg-block">
+                            <a href="signin" class="top-btn mt-15 mb-15">Sign In <i
+                                    class="fa-light fa-sign-in"></i></a>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile-menu"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- sign-up -->
+    <section class="contact-area pt-120 pb-120 p-relative fix">
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="contact-img3">
+                        <img src="../static/img/bg/contact-img.png" alt="img">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-bg02 contact-bg-gry2">
+                        <div class="section-title mb-20 wow fadeInDown  animated" data-animation="fadeInDown"
+                            data-delay=".4s" style="visibility: visible; animation-name: fadeInDown;">
+                            <h5><img src="../static/img/bg/sub-icon.png" alt="icon01"> TAKE A SERIAL</h5>
+                            <h2>
+                                Sign Up
+                            </h2>
+                        </div>
+
+                        <form action="/signup" method="post" class="contact-form mt-30 wow fadeInUp  animated"
+                            data-animation="fadeInUp" data-delay=".4s"
+                            style="visibility: visible; animation-name: fadeInUp;">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="contact-field p-relative c-name mb-20">
+                                        <input type="text" id="firstname" name="firstname" placeholder="First Name"
+                                            required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="contact-field p-relative c-name mb-20">
+                                        <input type="text" id="lastname" name="lastname" placeholder="Last Name" required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="contact-field p-relative c-name mb-20">
+                                        <select name="gender" id="gender" required="">
+                                            <option value="">Gender</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="contact-field p-relative c-name mb-20">
+                                        <select name="age" id="age" required="">
+                                            <option value="">Age</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="contact-field p-relative c-subject mb-20">
+                                        <input type="email" id="email" name="email" placeholder="Email" required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="contact-field p-relative c-name mb-30">
+                                        <input type="password" id="password" name="password" placeholder="Password"
+                                            required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="slider-btn">
+                                        <button type="reset" class="btn ss-btn" data-animation="fadeInRight"
+                                            data-delay=".8s"><span>Reset<i
+                                                    class="fa-light fa-refresh"></i></span></button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="slider-btn">
+                                        <button class="btn ss-btn" data-animation="fadeInRight"
+                                            data-delay=".8s"><span>Sign Up<i
+                                                    class="fa-light fa-user-plus"></i></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- sign-up-end -->
+
+    <!-- footer -->
+    <footer class="footer-bg footer-two footer-p" style="background-image: url(../static/img/bg/footer-bg.png);">
+        <div class="footer-top  pt-90 pb-30">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-xl-4 col-lg-4 col-sm-6">
+                        <div class="footer-widget mb-30" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="f-widget-title">
+                                <h2> <img src="../static/img/logo/f_logo.png" alt="img"></h2>
+                            </div>
+                            <div class="f-contact pr-10">
+                                <p>Empowering mental health through innovative technology, we strive to create
+                                    accessible solutions for early detection and intervention in children's mental
+                                    well-being, ensuring a brighter and healthier future for all.</p>
+                            </div>
+                            <div class="footer-social mt-10">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-sm-6">
+                        <div class="footer-widget mb-30" data-aos="fade-up" data-aos-duration="1400">
+                            <div class="f-widget-title">
+                                <h2>Important Links</h2>
+                            </div>
+                            <div class="footer-link">
+                                <ul>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="contact">Contact Us</a></li>
+                                    <li><a href="signin">Sign In</a></li>
+                                    <li><a href="signup">Sign Up</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-sm-6">
+                        <div class="footer-widget mb-30" data-aos="fade-up" data-aos-duration="1800">
+                            <div class="f-widget-title">
+                                <h2>Contact Us </h2>
+                            </div>
+                            <div class="f-contact pr-10">
+                                <ul>
+                                    <li>
+                                        <div class="icon"><i class="icon fal fa-envelope"></i><span><a
+                                                    href="mailto:info@kfueit.edu.pk">info@kfueit.edu.pk</a></span></div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"> <i class="icon fal fa-location-dot"></i> <span>Kfueit, Abu
+                                                Dhabi Rd, Rahim Yar Khan, Punjab</span> </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"> <i class="icon fal fa-phone"></i> <span><a
+                                                    href="tel:+921234567890">+92 123 4567890</a></span> </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-wrap">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        Copyright © DDCV2024 . All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-end -->
+
+    <!-- JS here -->
+    <script src="../static/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="../static/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/slick.min.js"></script>
+    <script src="../static/js/ajax-form.js"></script>
+    <script src="../static/js/paroller.js"></script>
+    <script src="../static/js/wow.min.js"></script>
+    <script src="../static/js/js_isotope.pkgd.min.js"></script>
+    <script src="../static/js/imagesloaded.min.js"></script>
+    <script src="../static/js/parallax.min.js"></script>
+    <script src="../static/js/jquery.waypoints.min.js"></script>
+    <script src="../static/js/jquery.counterup.min.js"></script>
+    <script src="../static/js/jquery.scrollUp.min.js"></script>
+    <script src="../static/js/jquery.meanmenu.min.js"></script>
+    <script src="../static/js/parallax-scroll.js"></script>
+    <script src="../static/js/swiper.min.js"></script>
+    <script src="../static/js/jquery.magnific-popup.min.js"></script>
+    <script src="../static/js/element-in-view.js"></script>
+    <script src="../static/js/main.js"></script>
+</body>
+
+</html>
